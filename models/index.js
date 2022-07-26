@@ -1,20 +1,15 @@
 const User = require("./User")
+const Category = require("./Category")
+const SubCategory = require("./SubCategory")
 
-// User.hasOne(Goals);
-// Goals.belongsTo(User);
+User.hasMany(Category);
+Category.belongsTo(User);
 
-// User.hasMany(Fitness);
-// Fitness.belongsTo(User);
-
-// User.hasMany(Hydration);
-// Hydration.belongsTo(User);
-
-// User.hasMany(Sleep);
-// Sleep.belongsTo(User);
-
-// User.hasMany(Mindfulness);
-// Mindfulness.belongsTo(User);
+Category.hasMany(SubCategory);
+SubCategory.belongsTo(Category);
 
 module.exports = {
     User,
+    Category, 
+    SubCategory
 };
